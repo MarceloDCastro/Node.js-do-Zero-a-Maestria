@@ -10,3 +10,14 @@ fs.readFile('arquivo.txt', 'utf-8', (error, data) => {
     }
 })
 
+const a = 120;
+const b = 180;
+
+console.log(`${a} + ${b} = ${a+b}`);
+
+function soma (a,b){
+    return a+b;
+}
+
+console.log(soma(120,180));
+
