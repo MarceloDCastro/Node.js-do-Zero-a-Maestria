@@ -1,0 +1,71 @@
+<h1>Editar Usuário</h1>
+<form action="/users/edit" method="POST">
+<input type="hidden" name="id" value="{{user.id}}">
+    <div class="form-control">
+        <label for="name">Nome</label>
+        <input type="text" name="name" value="{{user.name}}">
+    </div>
+    <div class="form-control">
+        <label for="name">Ocupação</label>
+        <input type="text" name="occupation" value="{{user.occupation}}">
+    </div>
+    <div class="form-control">
+        {{#if user.newsLetter}}
+        <input type="checkbox" name="newsLetter" checked>
+        {{else}}
+        <input type="checkbox" name="newsLetter">
+        {{/if}}
+        <label for="name">Enviar promoções</label>
+    </div>
+    <input type="submit" value="Editar">
+</form>
+
+<div style="margin-top: 20px">
+    <form action="/address/create" method="post">
+    <input type="hidden" name="UserId" value="{{user.id}}">
+    <div class="form-control">
+        <label for="name">Rua</label>
+        <input type="text" name="street">
+    </div>
+    <div class="form-control">
+        <label for="name">Número</label>
+        <input type="text" name="number">
+    </div>
+    <div class="form-control">
+        <label for="name">Cidade</label>
+        <input type="text" name="city">
+    </div>
+    <input type="submit" value="Cadastrar">
+    </form>
+</div>
+
+<div style="margin-top: 20px">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Rua</th>
+                <th>Número</th>
+                <th>Cidade</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each user.Addresses}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.street}}</td>
+                <td>{{this.number}}</td>
+                <td>{{this.city}}</td>
+                <td>
+                    <form action="/address/delete" method="post">
+                        <input type="hidden" name="UserId" value="{{this.UserId}}">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" value="X">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

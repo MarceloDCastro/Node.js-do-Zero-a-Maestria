@@ -1,0 +1,27 @@
+<h1>Sequelize</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ocupação</th>
+            <th>Notificações</th>
+            <th>Excluir</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.occupation}}</td>
+                <td>{{this.newsLetter}}</td>
+                <td><a href="/users/{{this.id}}">Ver</a></td>
+                <td><form action="/users/delete/{{this.id}}" method='POST' style="background-color: #dadada; box-shadow: none">
+                    <input type="submit" value="X">
+                </form></td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

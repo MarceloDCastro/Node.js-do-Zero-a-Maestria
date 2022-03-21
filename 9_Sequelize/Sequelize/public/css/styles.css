@@ -1,0 +1,41 @@
+
+body{
+    background-color: #dadada;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar{
+    padding: 1px;
+    width: 100%;
+    background-color: #fff;
+}
+
+#navbar ul{
+    list-style-type: none;
+}
+
+#navbar a{
+    text-decoration: none;
+    color: darkcyan;
+    font-weight: bold;
+    font: "Roboto";
+}
+
+form{
+    width: 70%;
+    min-width: 340px;
+    box-shadow: 5px 0 10px #000;
+    background: #fff;
+    margin: auto;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-control label{
+    font-weight: bold;
+}
